@@ -33,7 +33,7 @@ public class MyGetMethod {
     @ApiOperation(value = "要求客户端携带cookies访问",httpMethod = "GET")
     public String getWithCookies(HttpServletRequest request){
         Cookie[] cookies = request.getCookies();
-        if(Objects.isNull(cookies)){
+        if(cookies==null){
             return "你必须携带cookies信息来";
         }
         for(Cookie cookie : cookies){
